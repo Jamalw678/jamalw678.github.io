@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douceur Skin - Black Queen Elegance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Combined CSS */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffd700;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        body {
+            background: var(--primary-color);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: var(--primary-color);
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .animated-logo {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            animation: titlePulse 3s infinite ease-in-out;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+        }
+
+        .products-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .product {
+            background: var(--text-light);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--text-light);
+            color: var(--primary-color);
+        }
+
+        @keyframes titlePulse {
+            0%, 100% {
+                transform: scale(1);
+                color: var(--secondary-color);
+            }
+            50% {
+                transform: scale(1.1);
+                color: var(--text-light);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <img src="https://assets.onecompiler.app/42v26fysm/42zphvquu/black-woman-minimalist-flat-logo-vector-illustration_801978-47434-3893782222.jpg" 
+                 alt="Black Queen Logo" class="logo">
+            <h1 class="animated-logo">Douceur Skin</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="cart-btn">🛒 <span id="cart-counter">0</span></button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-heading">Transform Your Skin</h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/D-m1tP5oltM"
+                    title="Douceur Skin Transformation"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="hero-subtext">Luxury skincare designed to make you feel like royalty.</p>
+            <a href="#products" class="btn hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2 class="section-title">Our Products</h2>
+                <input type="text" id="searchBar" placeholder="Search Products..." oninput="filterProducts()" />
+                <div class="product-grid">
+                    <div class="product" data-name="ocean bleu">
+                        <img src="https://assets.onecompiler.app/42v26fysm/42x7vckhc/IMG_9227%203.JPG" alt="Ocean Bleu">
+                        <h3>Ocean Bleu</h3>
+                        <p>$15.00</p>
+                        <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                    <div class="product" data-name="cotton candy">
+                        <img src="https://assets.onecompiler.app/42v26fysm/42x9dbw44/Cottoncandy.JPG" alt="Cotton Candy">
+                        <h3>Cotton Candy</h3>
+                        <p>$18.00</p>
+                        <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                    <div class="product" data-name="lavender oil">
+                        <img src="https://assets.onecompiler.app/42v26fysm/42x9dbw44/LavenderOil.JPG" alt="Lavender Oil">
+                        <h3>Lavender Oil</h3>
+                        <p>$12.00</p>
+                        <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Douceur Skin</p>
+    </footer>
+
+    <script>
+        // Combined JavaScript
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-counter').innerText = cartCount;
+        }
+
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const productName = product.getAttribute('data-name');
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
