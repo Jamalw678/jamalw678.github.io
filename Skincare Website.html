@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douceur Skin - Black Queen Elegance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <img src="https://assets.onecompiler.app/42v26fysm/42zphvquu/black-woman-minimalist-flat-logo-vector-illustration_801978-47434-3893782222.jpg" 
+                 alt="Black Queen Logo" class="logo">
+            <h1 class="animated-logo">Douceur Skin</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="cart-btn">🛒 <span id="cart-counter">0</span></button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-heading">Transform Your Skin</h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/D-m1tP5oltM"
+                    title="Douceur Skin Transformation"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="hero-subtext">Luxury skincare designed to make you feel like royalty.</p>
+            <a href="#products" class="btn hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2 class="section-title">Our Products</h2>
+                <input type="text" id="searchBar" placeholder="Search Products..." oninput="filterProducts()" />
+                <div class="product-grid">
+                    <!-- Ocean Bleu Product -->
+                    <div class="product" data-name="ocean bleu">
+                        <img src="https://assets.onecompiler.app/42v26fysm/42x7vckhc/IMG_9227%203.JPG" alt="Ocean Bleu">
+                        <h3>Ocean Bleu</h3>
+                        <p>$15.00</p>
+                        <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                    <!-- Cotton Candy Product -->
+                    <div class="product" data-name="cotton candy">
+                        <img src="https://assets.onecompiler.app/42v26fysm/42x9dbw44/Cottoncandy.JPG" alt="Cotton Candy">
+                        <h3>Cotton Candy</h3>
+                        <p>$18.00</p>
+                        <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                    <!-- Lavender Oil Product -->
+                    <div class="product" data-name="lavender oil">
+                        <img src="https://assets.onecompiler.app/42v26fysm/42x9dbw44/LavenderOil.JPG" alt="Lavender Oil">
+                        <h3>Lavender Oil</h3>
+                        <p>$12.00</p>
+                        <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>"The Ocean Bleu scrub is life-changing! My skin has never felt this soft."</p>
+                        <h4>- Sarah L.</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Lavender Oil helps me relax every evening. Highly recommend!"</p>
+                        <h4>- Alex T.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Douceur Skin</h2>
+                <p>We are committed to bringing the best in skincare with natural, luxurious products that help you glow from the inside out.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="#">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Douceur Skin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
